@@ -4,6 +4,7 @@
 
 # IntelliJ project files
 target
+test-output
 .idea
 *.iml
 logs/

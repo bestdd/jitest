@@ -29,6 +29,21 @@ public class HttpUtils {
         return returnValue;
     }
 
+    public static String HttpPost(String url, String urlAndParams) throws Exception {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        ResponseHandler<String> responseHandler = new BasicResponseHandler();
+
+        HttpPost httpPost = new HttpPost(url);
+        //设置请求头
+//        httpPost.addHeader("Content-type", "application/json");
+        //设置请求体
+//        httpPost.setEntity(new StringEntity(json));
+        //发送请求
+        String returnValue = httpclient.execute(httpPost, responseHandler);
+
+        return returnValue;
+    }
+
     public static String HttpGet(String urlAndParams) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         ResponseHandler<String> responseHandler = new BasicResponseHandler();
