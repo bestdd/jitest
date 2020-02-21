@@ -29,28 +29,32 @@ public class HttpUtils {
         return returnValue;
     }
 
-    public static String HttpPost(String url, String urlAndParams) throws Exception {
+    /**
+     * post请求 参数为key:value
+     * @param  urlAndParams  url/参数：localhost:8080/itest/get?param1=1&param2=2
+     * @return
+     */
+    public static String HttpPost(String urlAndParams) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
-        HttpPost httpPost = new HttpPost(url);
-        //设置请求头
-//        httpPost.addHeader("Content-type", "application/json");
-        //设置请求体
-//        httpPost.setEntity(new StringEntity(json));
+        HttpPost httpPost = new HttpPost(urlAndParams);
         //发送请求
         String returnValue = httpclient.execute(httpPost, responseHandler);
 
         return returnValue;
     }
 
+    /**
+     * get请求 参数为key:value
+     * @param  urlAndParams  url/参数：localhost:8080/itest/get?param1=1&param2=2
+     * @return
+     */
     public static String HttpGet(String urlAndParams) throws Exception {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         ResponseHandler<String> responseHandler = new BasicResponseHandler();
 
         HttpGet httpGet = new HttpGet(urlAndParams);
-        //设置请求头
-        httpGet.addHeader("Content-type", "application/json");
         //发送请求
         String returnValue = httpclient.execute(httpGet, responseHandler);
 
