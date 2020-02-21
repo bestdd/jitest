@@ -15,9 +15,9 @@ public class InterfaceAutoDemo {
 
     public static void main(String[] args) throws Exception {
         //todo  请自定义——入参
-        String jsonString = "{\"orderNo\":\"2020020100000010\",\"signInfo\":\"aba\"}";
+        String jsonString = "{\"param1\":1,\"param2\":2}";
         //todo  请自定义——请求url
-        String url = "http://localhost:8080/pay/receipt/singleQuery";
+        String url = "http://localhost:8080/itest/post/json";
         //发送post请求
         String response = HttpUtils.HttpPostWithJson(url, jsonString);
         System.out.println("响应内容为：" + response);
