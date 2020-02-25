@@ -3,11 +3,13 @@ package com.way.jitest.common;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
+import org.apache.poi.openxml4j.util.ZipSecureFile;
 
 import java.util.List;
 import java.util.Map;
 
 /**
+ * Excel读写工具类
  * @author xkm
  * @date 2020/2/20
  */
@@ -20,6 +22,7 @@ public class ExcelUtils {
      * @return
      */
     public static List<Map<String, Object>> getExcelData(String xlsxPath) {
+        ZipSecureFile.setMinInflateRatio(-1.0d);
         String rootDir = System.getProperty("user.dir");
         ExcelReader reader = ExcelUtil.getReader(xlsxPath);
         List<Map<String, Object>> readAll = reader.readAll();
@@ -37,6 +40,7 @@ public class ExcelUtils {
      */
     public static boolean updateExcelDate(int x, int y, Object value, String xlsxPath, String shellName){
         // 通过工具类创建writer
+        ZipSecureFile.setMinInflateRatio(-1.0d);
         ExcelWriter writer = ExcelUtil.getWriter(xlsxPath,shellName);
         writer.writeCellValue(x,y,value);
         // 关闭writer，释放内存
