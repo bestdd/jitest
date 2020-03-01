@@ -27,6 +27,7 @@ jitest分为v1.0,v2.0,v3.0 使用工具和复杂度不同，测试同学自由�
 - 录入用例：jitest/src/main/resources/case-template.xlsx
 - 入口方法：InterfaceAutoTestNgMysqlExtentreportDemo.java 右击运行
 - 测试报告位置：test-output/Extent.html
+![](https://ae01.alicdn.com/kf/Hedcc626f21f34205829f5b7685fe9786D.png)
 ### 帮你学习
 
 #### java
