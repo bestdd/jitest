@@ -54,3 +54,6 @@ VO vo = JSON.parseObject("{...}", VO.class); //json字符串转换为
 #### httpClient
 可参考使用：com.way.jitest.common.HttpUtils  
 官方使用示例：http://hc.apache.org/httpcomponents-client-4.5.x/httpclient/examples/org/apache/http/examples/client/
+
+>扫一扫，关注我
+![](https://ae01.alicdn.com/kf/H42a03032ffb14f939993a455440bb9634.jpg)
